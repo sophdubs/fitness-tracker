@@ -9,26 +9,33 @@
 <body>
     <header>
         <h1>My Fitness Tracker</h1>
-        <h4>Enter your workout routine to track your weekly track and acheive your weekly fitness goals</h4>
+        <h4>Enter your workout routine to track and acheive your weekly fitness goals</h4>
     </header>
     <main>
         <section class="week">
             <ul class="weekdays">
-                <li>Sunday</li>
-                <li>Monday</li>
-                <li>Tuesday</li>
-                <li>Wednesday</li>
-                <li>Thursday</li>
-                <li>Friday</li>
-                <li>Saturday</li>
+                <li>
+                    <h2>Sunday</h2>
+                    <ul class="sunday-list">
+                        <li>20 burpees</li>
+                        <li>30 minutes cardio</li>
+                    </ul>
+                </li>
             </ul>
         </section>
-        <section class="form">
-            <p>Enter your workout</p>
+        <section class="form add-workout">
+            <form >
+                <input type="text" name="workout" placeholder="workout-name" required>
+                <input type="submit" value="+ Add Workout">
+            </form>
         </section>
     </main>
-    <footer>
-        <p>fooooterrrr</p>
-    </footer>
+
+    <script>
+        const addWorkout = document.querySelector('.add-workout');
+        const workoutList = document.querySelector('.sunday-list');
+        const workouts = [];
+
+    </script>
 </body>
 </html>
