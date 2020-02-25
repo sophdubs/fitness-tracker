@@ -32,7 +32,7 @@
     <script>
         const addWorkoutForm = document.querySelector('.add-workout-form');
         const workoutList = document.querySelector('.sunday-list');
-        const workouts = [];
+        const workouts = JSON.parse(localStorage.getItem('workouts')) || [];
 
         function addWorkout(e) {
             e.preventDefault();
@@ -43,6 +43,7 @@
             };
             workouts.push(workout);
             populateList(workouts, workoutList);
+            localStorage.setItem('workouts', JSON.stringify(workouts));
             this.reset();
         }
 
@@ -57,6 +58,8 @@
         }
 
         addWorkoutForm.addEventListener('submit', addWorkout);
+
+        populateList(workouts, workoutList);
 
     </script>
 </body>
