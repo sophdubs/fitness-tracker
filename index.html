@@ -17,8 +17,6 @@
                 <li>
                     <h2>Sunday</h2>
                     <ul class="sunday-list">
-                        <li>20 burpees</li>
-                        <li>30 minutes cardio</li>
                     </ul>
                 </li>
             </ul>
@@ -43,8 +41,19 @@
                 exercise,
                 done: true
             };
-            console.log(workout);
+            workouts.push(workout);
+            populateList(workouts, workoutList);
             this.reset();
+        }
+
+        function populateList(workouts=[], workoutList) {
+            workoutList.innerHTML = workouts.map((workout, i) => {
+                return `
+                <li>
+                    <label for="">${workout.exercise}</label>
+                </li>
+                `;
+            }).join('');
         }
 
         addWorkoutForm.addEventListener('submit', addWorkout);
