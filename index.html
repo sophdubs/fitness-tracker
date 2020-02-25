@@ -23,18 +23,31 @@
                 </li>
             </ul>
         </section>
-        <section class="form add-workout">
-            <form >
-                <input type="text" name="workout" placeholder="workout-name" required>
+        <section class="form">
+            <form class="add-workout-form" >
+                <input type="text" name="workout" placeholder="enter workout" required>
                 <input type="submit" value="+ Add Workout">
             </form>
         </section>
     </main>
 
     <script>
-        const addWorkout = document.querySelector('.add-workout');
+        const addWorkoutForm = document.querySelector('.add-workout-form');
         const workoutList = document.querySelector('.sunday-list');
         const workouts = [];
+
+        function addWorkout(e) {
+            e.preventDefault();
+            const exercise = (this.querySelector('[name=workout]')).value;
+            const workout = {
+                exercise,
+                done: true
+            };
+            console.log(workout);
+            this.reset();
+        }
+
+        addWorkoutForm.addEventListener('submit', addWorkout);
 
     </script>
 </body>
