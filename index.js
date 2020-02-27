@@ -1,4 +1,4 @@
-const workoutList = JSON.parse(localStorage.getItem('workout-list')) || {};
+const workoutList = JSON.parse(localStorage.getItem('workoutList')) || {};
 const day = document.querySelector('#days-of-the-week');
 const workout = document.querySelector('#workout-type');
 const cardioDetails = document.querySelector('#details-cardio');
@@ -23,7 +23,7 @@ function handleSubmit(e) {
 
     workoutList[data.weekday] ? workoutList[data.weekday].push(JSON.stringify(data)) : workoutList[data.weekday] = [JSON.stringify(data)];
     localStorage.setItem('workoutList', JSON.stringify(workoutList));
-    
+    populateWeek();
     form.reset();
     document.querySelectorAll('.option').forEach(elem => {
         elem.style.display = 'none';
@@ -49,8 +49,42 @@ function collectData() {
     return data;
 }
 
+function populateWeek() {
+    for (let [key, value] of Object.entries(workoutList)) {
+        let weekday = document.querySelector(`.${key}-list`);
+        weekday.innerHTML = value.map(val => {
+            val = JSON.parse(val);
+            if (val.type === 'strength') {
+                return `
+                <li>
+                    <ul class="workout-box strength">
+                        <li class="type">${val.type} workout</li>
+                        <li class="desc">${val.desc}</li>
+                        <li class="sets">Sets:${val.sets}</li>
+                        <li class="reps">Reps:${val.reps}</li>
+                        <li class="weight">Weight:${val.weight}</li>
+                    <ul>
+                </li>
+                `
+            } else {
+                return `
+                <li>
+                    <ul class="workout-box cardio">
+                        <li class="type">${val.type} workout</li>
+                        <li class="desc">${val.desc}</li>
+                        <li class="sets">Time:${val.time}</li>
+                        <li class="reps">Distance:${val.distance}</li>
+                        <li class="weight">Intensity:${val.intensity}</li>
+                    <ul>
+                </li>
+                `
+            }
+        }).join('');
+        // maybe use a helper to construct the inner html from value
+        //remember to add class .cardio or .strength to give them different colors with css
+    }
+}
 
-// addWorkoutForm.addEventListener('submit', addWorkout);
 
 // function populateWeek() {
 //     // let week = JSON.parse(localStorage.getItem('workouts'));
