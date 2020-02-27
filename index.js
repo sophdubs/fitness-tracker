@@ -31,7 +31,12 @@ form.addEventListener('submit', (e) => {
         const reps = document.querySelector('[name=reps]').value;
         const weight = document.querySelector('[name=weight]').value;
     }
-    //local storage stuff
+    console.log('submittedddd');
+    
+    form.reset();
+    document.querySelectorAll('.option').forEach(elem => {
+        elem.style.display = 'none';
+    });
 })
 
 
