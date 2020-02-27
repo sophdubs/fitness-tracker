@@ -1,4 +1,4 @@
-
+const workoutList = JSON.parse(localStorage.getItem('workout-list')) || {};
 const day = document.querySelector('#days-of-the-week');
 const workout = document.querySelector('#workout-type');
 const cardioDetails = document.querySelector('#details-cardio');
@@ -15,48 +15,40 @@ workout.addEventListener('change', (e) => {
 });
 
 const form = document.querySelector('#workout-form');
+form.addEventListener('submit', handleSubmit);
 
-form.addEventListener('submit', (e) => {
+function handleSubmit(e) {
     e.preventDefault();
-    const weekday = document.querySelector('[name=weekday-options-list]').value;
-    const type = document.querySelector('[name=workout-options-list').value;
-    if (type === 'cardio') {
-        const desc = document.querySelector('[name=description-cardio]').value;
-        const time = document.querySelector('[name=time]').value;
-        const distance = document.querySelector('[name=distance]').value;
-        const intensity = document.querySelector('[name=intensity]').value;
-    } else {
-        const desc = document.querySelector('[name=description-strength]').value;
-        const sets = document.querySelector('[name=sets]').value;
-        const reps = document.querySelector('[name=reps]').value;
-        const weight = document.querySelector('[name=weight]').value;
-    }
-    console.log('submittedddd');
+    const data = collectData();
+
+    workoutList[data.weekday] ? workoutList[data.weekday].push(JSON.stringify(data)) : workoutList[data.weekday] = [JSON.stringify(data)];
+    localStorage.setItem('workoutList', JSON.stringify(workoutList));
     
     form.reset();
     document.querySelectorAll('.option').forEach(elem => {
         elem.style.display = 'none';
     });
-})
+}
 
+function collectData() {
+    const weekday = document.querySelector('[name=weekday-options-list]').value;
+    const type = document.querySelector('[name=workout-options-list').value;
+    const data = {weekday, type};
+    if (type === 'cardio') {
+        data['desc']= document.querySelector('[name=description-cardio]').value;
+        data['time'] = document.querySelector('[name=time]').value;
+        data['distance'] = document.querySelector('[name=distance]').value;
+        data['intensity'] = document.querySelector('[name=intensity]').value;
+        
+    } else {
+        data['desc'] = document.querySelector('[name=description-strength]').value;
+        data['sets'] = document.querySelector('[name=sets]').value;
+        data['reps'] = document.querySelector('[name=reps]').value;
+        data['weight'] = document.querySelector('[name=weight]').value;
+    }
+    return data;
+}
 
-// const weekdays = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-// const addWorkoutForm = document.querySelector('.add-workout-form');
-// const workoutList = document.querySelector('.sunday-list');
-// const workouts = JSON.parse(localStorage.getItem('workouts')) || {};
-
-
-// function addWorkout(e) {
-//     e.preventDefault();
-//     const exercise = (this.querySelector('[name=workout]')).value;
-//     let radios = document.querySelectorAll('input[type="radio"]:checked');
-//     let day = radios.length>0 ? radios[0].value : 'there was none';
-//     console.log(weekdays.indexOf(day));
-//     workouts[day] ? workouts[day].push(exercise) : workouts[day]=[exercise];
-//     localStorage.setItem('workouts', JSON.stringify(workouts));
-//     populateWeek();
-//     this.reset();
-// }
 
 // addWorkoutForm.addEventListener('submit', addWorkout);
 
