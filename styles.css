@@ -6,6 +6,67 @@ body {
     color: white;
     text-align: center;
     align-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas: 'header'
+                        'calendar'
+                        'form';
+}
+
+header {
+    grid-area: header;
+}
+
+section.weekdays-section {
+    grid-area: calendar;
+}
+
+ul.weekdays-ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'sun mon tues wed thurs fri sat';
+   
+}
+
+.weekdays-ul li{
+    background: blue;
+    width: 12vw;
+    height: 35vh;
+    border-radius: 10%;
+}
+
+.sunday-li {
+    grid-area: sun;
+}
+
+.monday-li {
+    grid-area: mon;
+}
+
+.tuesday-li {
+    grid-area: tues;
+}
+
+.wednesday-li {
+    grid-area: wed;
+}
+
+.thursday-li {
+    grid-area: thurs;
+}
+
+.friday-li {
+    grid-area: fri;
+}
+
+.saturday-li {
+    grid-area: sat;
+}
+
+section.form {
+    grid-area: form;
 }
 
 h1.title {
