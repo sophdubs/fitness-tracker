@@ -15,3 +15,12 @@ h1.title {
     border-radius: 25%;
 }
 
+ul {
+    list-style: none;
+}
+
+.option {
+    display: none;
+}
+
+

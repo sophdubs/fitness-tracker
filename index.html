@@ -14,8 +14,8 @@
         <h4>Enter your workout routine to track and acheive your weekly fitness goals</h4>
     </header>
     <main>
-        <section class="week">
-            <ul class="weekdays">
+        <section>
+            <ul>
                 <li>
                     <h2>Sunday</h2>
                     <ul class="sunday-list">
@@ -30,15 +30,57 @@
             </ul>
         </section>
         <section class="form">
-            <form class="add-workout-form" >
-                <label for="">Choose day:</label><br>
-                <input type="radio" id="sunday" name="weekday" value="sunday">
-                <label for="sunday">Sunday</label><br>
-                <input type="radio" id="monday" name="weekday" value="monday">
-                <label for="sunday">Monday</label><br>
-                <input type="text" name="workout" placeholder="enter workout" required>
+            <form id="workout-form">
+                <div id="days-of-the-week" class="form-group">
+                    <label for="weekday-options">Choose a day of the week:</label>
+                    <select name="weekday-options-list" id="choose-weekday">
+                        <option value="" selected disabled required>-select-</option>
+                        <option value="sunday">Sunday</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                    </select>
+                </div>
+            
+                <div id="workout-type" class="form-group">
+                    <label for="workout-options">Choose your workout type:</label>
+                    <select name="workout-options-list" id="choose-workout">
+                        <option value="" selected disabled required>-select-</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="strength">Strength</option>
+                    </select>
+                </div>
+            
+                <div id="details-cardio" class="form-group option">
+                    <label for="details-cardio-label">Enter workout details:</label><br>
+                    <label for="description">Description:</label>
+                    <input type="text" name="description-cardio"><br>
+                    <label for="time">Time:</label>
+                    <input type="text" name="time"><br>
+                    <label for="distance">Distance:</label>
+                    <input type="text" name="distance"><br>
+                    <label for="intensity">Intensity:</label>
+                    <input type="text" name="intensity"><br>
+                </div>
+            
+                <div id="details-strength" class="form-group option">
+                    <label for="details-strength-label">Enter workout details:</label><br>
+                    <label for="description-strength">Description:</label>
+                    <input type="text" name="description-strength"><br>
+                    <label for="sets">Sets:</label>
+                    <input type="text" name="sets"><br>
+                    <label for="reps">Reps:</label>
+                    <input type="text" name="reps"><br>
+                    <label for="wight">Weight:</label>
+                    <input type="text" name="weight"><br>
+                </div>
+        
                 <input type="submit" value="+ Add Workout">
             </form>
+            
         </section>
     </main>
     <script type="text/javascript" src="index.js"></script>
