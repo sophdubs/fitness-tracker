@@ -63,7 +63,7 @@ function populateWeek() {
                         <li class="sets">Sets:${val.sets}</li>
                         <li class="reps">Reps:${val.reps}</li>
                         <li class="weight">Weight:${val.weight}</li>
-                    <ul>
+                    </ul>
                 </li>
                 `
             } else {
@@ -75,7 +75,7 @@ function populateWeek() {
                         <li class="sets">Time:${val.time}</li>
                         <li class="reps">Distance:${val.distance}</li>
                         <li class="weight">Intensity:${val.intensity}</li>
-                    <ul>
+                    </ul>
                 </li>
                 `
             }
