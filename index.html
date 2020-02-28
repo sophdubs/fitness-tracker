@@ -9,97 +9,97 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header-section">
         <h1 class="title">My Fitness Tracker</h1>
-        <h4>Enter your workout routine to track and acheive your weekly fitness goals</h4>
+        <!-- <h4>Enter your workout routine to track and acheive your weekly fitness goals</h4> -->
     </header>
-    <main>
-        <section class="weekdays-section">
-            <ul class="weekdays-ul">
-                <li class="sunday-li">
-                    <h2>Sunday</h2>
-                    <ul class="sunday-list"></ul>
-                </li>
-                <li class="monday-li"> 
-                    <h2>Monday</h2>
-                    <ul class="monday-list"></ul>
-                </li>
-                <li class="tuesday-li">
-                    <h2>Tuesday</h2>
-                    <ul class="tuesday-list"></ul>
-                </li>
-                <li class="wednesday-li">
-                    <h2>Wednesday</h2>
-                    <ul class="wednesday-list"></ul>
-                </li>
-                <li class="thursday-li">
-                    <h2>Thursday</h2>
-                    <ul class="thursday-list"></ul>
-                </li>
-                <li class="friday-li">
-                    <h2>Friday</h2>
-                    <ul class="friday-list"></ul>
-                </li>
-                <li class="saturday-li">
-                    <h2>Saturday</h2>
-                    <ul class="saturday-list"></ul>
-                </li>
-            </ul>
-        </section>
-        <section class="form">
-            <form id="workout-form">
-                <div id="days-of-the-week" class="form-group">
-                    <label for="weekday-options">Choose a day of the week:</label>
-                    <select name="weekday-options-list" id="choose-weekday">
-                        <option value="" selected disabled required>-select-</option>
-                        <option value="sunday">Sunday</option>
-                        <option value="monday">Monday</option>
-                        <option value="tuesday">Tuesday</option>
-                        <option value="wednesday">Wednesday</option>
-                        <option value="thursday">Thursday</option>
-                        <option value="friday">Friday</option>
-                        <option value="saturday">Saturday</option>
-                    </select>
-                </div>
-            
-                <div id="workout-type" class="form-group">
-                    <label for="workout-options">Choose your workout type:</label>
-                    <select name="workout-options-list" id="choose-workout">
-                        <option value="" selected disabled required>-select-</option>
-                        <option value="cardio">Cardio</option>
-                        <option value="strength">Strength</option>
-                    </select>
-                </div>
-            
-                <div id="details-cardio" class="form-group option">
-                    <label for="details-cardio-label">Enter workout details:</label><br>
-                    <label for="description">Description:</label>
-                    <input type="text" name="description-cardio"><br>
-                    <label for="time">Time:</label>
-                    <input type="text" name="time"><br>
-                    <label for="distance">Distance:</label>
-                    <input type="text" name="distance"><br>
-                    <label for="intensity">Intensity:</label>
-                    <input type="text" name="intensity"><br>
-                </div>
-            
-                <div id="details-strength" class="form-group option">
-                    <label for="details-strength-label">Enter workout details:</label><br>
-                    <label for="description-strength">Description:</label>
-                    <input type="text" name="description-strength"><br>
-                    <label for="sets">Sets:</label>
-                    <input type="text" name="sets"><br>
-                    <label for="reps">Reps:</label>
-                    <input type="text" name="reps"><br>
-                    <label for="wight">Weight:</label>
-                    <input type="text" name="weight"><br>
-                </div>
+    
+    <section class="weekdays-section">
+        <ul class="weekdays-ul">
+            <li class="sunday-li card">
+                <h2>Sunday</h2>
+                <ul class="sunday-list"></ul>
+            </li>
+            <li class="monday-li card"> 
+                <h2>Monday</h2>
+                <ul class="monday-list"></ul>
+            </li>
+            <li class="tuesday-li card">
+                <h2>Tuesday</h2>
+                <ul class="tuesday-list"></ul>
+            </li>
+            <li class="wednesday-li card">
+                <h2>Wednesday</h2>
+                <ul class="wednesday-list"></ul>
+            </li>
+            <li class="thursday-li card">
+                <h2>Thursday</h2>
+                <ul class="thursday-list"></ul>
+            </li>
+            <li class="friday-li card">
+                <h2>Friday</h2>
+                <ul class="friday-list"></ul>
+            </li>
+            <li class="saturday-li card">
+                <h2>Saturday</h2>
+                <ul class="saturday-list"></ul>
+            </li>
+        </ul>
+    </section>
+    <section id="form-section" class="form-section">
+        <form id="workout-form">
+            <div id="days-of-the-week" class="form-group">
+                <label for="weekday-options">Choose a day of the week:</label>
+                <select name="weekday-options-list" id="choose-weekday">
+                    <option value="" selected disabled required>-select-</option>
+                    <option value="sunday">Sunday</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                </select>
+            </div>
         
-                <input type="submit" value="+ Add Workout">
-            </form>
-            
-        </section>
-    </main>
+            <div id="workout-type" class="form-group">
+                <label for="workout-options">Choose your workout type:</label>
+                <select name="workout-options-list" id="choose-workout">
+                    <option value="" selected disabled required>-select-</option>
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Strength</option>
+                </select>
+            </div>
+        
+            <div id="details-cardio" class="form-group option">
+                <label for="details-cardio-label">Enter workout details:</label><br>
+                <label for="description">Description:</label>
+                <input type="text" name="description-cardio"><br>
+                <label for="time">Time:</label>
+                <input type="text" name="time"><br>
+                <label for="distance">Distance:</label>
+                <input type="text" name="distance"><br>
+                <label for="intensity">Intensity:</label>
+                <input type="text" name="intensity"><br>
+            </div>
+        
+            <div id="details-strength" class="form-group option">
+                <label for="details-strength-label">Enter workout details:</label><br>
+                <label for="description-strength">Description:</label>
+                <input type="text" name="description-strength"><br>
+                <label for="sets">Sets:</label>
+                <input type="text" name="sets"><br>
+                <label for="reps">Reps:</label>
+                <input type="text" name="reps"><br>
+                <label for="wight">Weight:</label>
+                <input type="text" name="weight"><br>
+            </div>
+    
+            <input type="submit" value="+ Add Workout">
+        </form>
+        
+    </section>
+    
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

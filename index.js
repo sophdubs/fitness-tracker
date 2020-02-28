@@ -56,48 +56,32 @@ function populateWeek() {
             val = JSON.parse(val);
             if (val.type === 'strength') {
                 return `
-                <li>
-                    <ul class="workout-box strength">
-                        <li class="type">${val.type} workout</li>
+                <li class="workout-box strength">
+                    <ul class="workout-box-ul">
                         <li class="desc">${val.desc}</li>
-                        <li class="sets">Sets:${val.sets}</li>
-                        <li class="reps">Reps:${val.reps}</li>
-                        <li class="weight">Weight:${val.weight}</li>
+                        <li class="sets">Sets: ${val.sets}</li>
+                        <li class="reps">Reps: ${val.reps}</li>
+                        <li class="weight">Weight: ${val.weight}</li>
                     </ul>
                 </li>
                 `
             } else {
                 return `
-                <li>
-                    <ul class="workout-box cardio">
-                        <li class="type">${val.type} workout</li>
+                <li class="workout-box cardio">
+                    <ul class="workout-box-ul">
                         <li class="desc">${val.desc}</li>
-                        <li class="sets">Time:${val.time}</li>
-                        <li class="reps">Distance:${val.distance}</li>
-                        <li class="weight">Intensity:${val.intensity}</li>
+                        <li class="sets">Time: ${val.time}</li>
+                        <li class="reps">Distance: ${val.distance}</li>
+                        <li class="weight">Intensity: ${val.intensity}</li>
                     </ul>
                 </li>
                 `
             }
         }).join('');
-        // maybe use a helper to construct the inner html from value
-        //remember to add class .cardio or .strength to give them different colors with css
     }
 }
 
 
-// function populateWeek() {
-//     // let week = JSON.parse(localStorage.getItem('workouts'));
-//     for (let [key, value] of Object.entries(workouts)) {
-//         let weekday = document.querySelector(`.${key}-list`);
-//         weekday.innerHTML = value.map(val => {
-//             return `
-//             <li> ${val} </li>
-//             `
-//         }).join('');
-//     }
-// }
-
-// populateWeek();
+populateWeek();
 
 
