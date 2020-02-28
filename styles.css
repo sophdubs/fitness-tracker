@@ -26,7 +26,6 @@ body {
 
 .form-section {
     grid-area: form;
-    background: red;
     padding-top: 5vh;
 }
 
@@ -37,10 +36,8 @@ header h1 {
     width: 45vw;
     background: rgba(0, 0, 0, 0.5);
     margin: auto;
-    border-radius: 25%;
+    border-radius: 15px;
 }
-
-
 
 ul.weekdays-ul {
     display: grid;
@@ -48,7 +45,6 @@ ul.weekdays-ul {
     grid-template-rows: 1fr;
     grid-template-areas: 'sun mon tues wed thurs fri sat';
     grid-gap: 1vw;
-   
 }
 
 .weekdays-ul li.card{
@@ -119,6 +115,61 @@ li.desc {
 li.sets, li.reps, li.weight {
     font-size: 0.6em;
 }
+
+#workout-form {
+    background: rgba(255, 255, 255, 0.2);
+    width: 40vw;
+    position: relative;
+    margin: auto;
+    outline: 1px dotted rgba(255, 255, 255, 0.5);
+    outline-offset: 5px; 
+    padding: 2vw;
+}
+
+#days-of-the-week {
+    font-size: 1.5em;
+}
+
+#workout-type {
+    font-size: 1.5em;
+}
+
+#choose-weekday {
+    font-size: 0.8em;
+}
+
+#choose-workout {
+    font-size: 0.8em;
+}
+
+#details-strength label {
+    font-size: 1.5em;
+}
+
+#details-strength input {
+    font-size: 1em;
+}
+
+#details-cardio label {
+    font-size: 1.5em;
+}
+
+#details-cardio input {
+    font-size: 1em;
+}
+
+#submit-button {
+    margin-top: 2%;
+    width: 10vw;
+    font-size: 500px;
+}
+
+
+
+
+
+
+
 
 
 
