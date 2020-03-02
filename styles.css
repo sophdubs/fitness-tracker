@@ -1,3 +1,4 @@
+
 body {
     background: url('./background.jpg') no-repeat;
     background-size: cover;
@@ -164,11 +165,23 @@ li.sets, li.reps, li.weight {
     font-size: 500px;
 }
 
+/* default: mobile */
 
+@media (min-width: 480px) {
+   
+}
 
+@media (min-width: 768px) {
 
+}
 
+@media (min-width: 992px) {
 
+}
+
+@media (min-width: 1200px) {
+
+}
 
 
 
