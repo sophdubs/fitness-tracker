@@ -42,10 +42,6 @@ header h1 {
 ul.weekdays-ul {
     display: grid;
     grid-gap: 1vw; 
-    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'sun mon tues wed thurs fri sat';
-    */
 }
 .weekdays-ul li.card{
     background: rgba(0, 0, 0, 0.5);
@@ -149,6 +145,7 @@ li.sets, li.reps, li.weight {
 @media (min-width: 480px) {
     header h1 {
         width: 50vw;
+        font-size: 1.7em;
     }
     ul.weekdays-ul {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -159,7 +156,7 @@ li.sets, li.reps, li.weight {
         padding: 1vw;
         width: 10vw;
         height: auto;
-        font-size: 0.5em;
+        font-size: 0.4em;
         min-height: 20vh;
     }
     #workout-form {
@@ -173,7 +170,7 @@ li.sets, li.reps, li.weight {
 }
 @media (min-width: 768px) {
     header h1 {
-        font-size: 3em;
+        font-size: 2.5em;
     }
     .weekdays-ul li.card{ 
         font-size: 0.6em;
@@ -182,18 +179,25 @@ li.sets, li.reps, li.weight {
         font-size: 1.5em;
         top: 3vh;
     }
-
 }
-
 @media (min-width: 992px) {
     .weekdays-ul li.card{ 
         font-size: 0.75em;
     }
 }
-
 @media (min-width: 1200px) {
-    body {
-        background: red;
+   body {
+       background-size: cover;
+    }
+    .weekdays-ul li.card{ 
+        font-size: 0.9em;
+    }
+    #workout-form {
+        font-size: 1.5em;
+        top: -3vh;
+    }
+    .workout-box {
+        font-size: 1.3em;
     }
 }
 
