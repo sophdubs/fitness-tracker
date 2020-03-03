@@ -1,7 +1,7 @@
-/* default styling for all breakpoints */
+/* DEFAULT STYLES FOR ALL DEVICE-WIDTHS */
 body {
     background: url('./background.jpg') no-repeat;
-    background-size: cover;
+    background-size: auto 100vh;
     font-family: 'Raleway';
     font-weight: bold;
     color: white;
@@ -50,8 +50,6 @@ ul.weekdays-ul {
 .weekdays-ul li.card{
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10%;
-    /* width: 12vw;
-    height: 35vh; */
 }
 .sunday-li {
     grid-area: sun;
@@ -101,7 +99,6 @@ li.desc {
 li.sets, li.reps, li.weight {
     font-size: 0.6em;
 }
-
 #workout-form {
     background: rgba(255, 255, 255, 0.2);
     width: 40vw;
@@ -111,48 +108,12 @@ li.sets, li.reps, li.weight {
     outline-offset: 5px; 
     padding: 2vw;
 }
-
-#days-of-the-week {
-    /* font-size: 1.5em; */
-}
-
-#workout-type {
-    /* font-size: 1.5em; */
-}
-
-#choose-weekday {
-    /* font-size: 0.8em; */
-}
-
-#choose-workout {
-    /* font-size: 0.8em; */
-}
-
-#details-strength label {
-    /* font-size: 1.5em; */
-}
-
-#details-strength input {
-    /* font-size: 1em; */
-}
-
-#details-cardio label {
-    /* font-size: 1.5em; */
-}
-
-#details-cardio input {
-    /* font-size: 1em; */
-}
-
 #submit-button {
     margin-top: 2%;
     width: 10vw;
-    /* font-size: 500px; */
 }
 
-
-/* default styling for mobile */
-
+/* RESPONSIVE STYLES FOR DIFFERENT DEVICE-WIDTHS */
 @media (max-width: 479px) {
     body {
         background-size: auto 100vh;
@@ -185,11 +146,7 @@ li.sets, li.reps, li.weight {
         margin-bottom: 0.3vh;
     }
 }
-
 @media (min-width: 480px) {
-    body {
-        background-size: auto 100vh;
-    }
     header h1 {
         width: 50vw;
     }
@@ -214,16 +171,24 @@ li.sets, li.reps, li.weight {
         margin-bottom: 0.5vh;
     }
 }
-
 @media (min-width: 768px) {
-    body {
-        background: blue;
+    header h1 {
+        font-size: 3em;
+    }
+    .weekdays-ul li.card{ 
+        font-size: 0.6em;
+    }
+    #workout-form {
+        font-size: 1.5em;
+        top: 3vh;
     }
 
 }
 
 @media (min-width: 992px) {
-
+    body {
+        background: red;
+    }
 }
 
 @media (min-width: 1200px) {
