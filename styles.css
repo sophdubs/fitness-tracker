@@ -172,6 +172,7 @@ li.sets, li.reps, li.weight {
         width: 20vw;
         height: auto;
         font-size: 0.5em;
+        min-height: 13vh;
     }
     .thursday-li, .friday-li, .saturday-li {
         position: relative;
@@ -183,14 +184,18 @@ li.sets, li.reps, li.weight {
     .workout-box {
         margin-bottom: 0.3vh;
     }
-
 }
 
 @media (min-width: 480px) {
-   
+    body {
+        background: red;
+    }  
 }
 
 @media (min-width: 768px) {
+    body {
+        background: blue;
+    }
 
 }
 
