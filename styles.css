@@ -186,13 +186,15 @@ li.sets, li.reps, li.weight {
 }
 
 @media (min-width: 992px) {
-    body {
-        background: red;
+    .weekdays-ul li.card{ 
+        font-size: 0.75em;
     }
 }
 
 @media (min-width: 1200px) {
-    
+    body {
+        background: red;
+    }
 }
 
 
