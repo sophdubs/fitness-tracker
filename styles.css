@@ -1,4 +1,4 @@
-
+/* default styling for all breakpoints */
 body {
     background: url('./background.jpg') no-repeat;
     background-size: cover;
@@ -9,110 +9,95 @@ body {
     align-content: center;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 3fr;
     grid-template-areas: 'header'
                         'calendar'
                         'form';
 }
-
 .header-section {
+    position: relative;
     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 .weekdays-section {
     grid-area: calendar;
     position: relative;
     margin: auto;
 }
-
 .form-section {
+    position: relative;
     grid-area: form;
-    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 header h1 {
     position: relative;
-    font-size: 3.5em;
-    top: 30%;
-    width: 45vw;
     background: rgba(0, 0, 0, 0.5);
     margin: auto;
     border-radius: 15px;
 }
-
 ul.weekdays-ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1vw; 
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 'sun mon tues wed thurs fri sat';
-    grid-gap: 1vw;
+    */
 }
-
 .weekdays-ul li.card{
     background: rgba(0, 0, 0, 0.5);
-    width: 12vw;
-    height: 35vh;
     border-radius: 10%;
+    /* width: 12vw;
+    height: 35vh; */
 }
-
 .sunday-li {
     grid-area: sun;
 }
-
 .monday-li {
     grid-area: mon;
 }
-
 .tuesday-li {
     grid-area: tues;
 }
-
 .wednesday-li {
     grid-area: wed;
 }
-
 .thursday-li {
     grid-area: thurs;
 }
-
 .friday-li {
     grid-area: fri;
 }
-
 .saturday-li {
     grid-area: sat;
 }
-
 ul {
     list-style: none;
     padding: 0;
 }
-
 .option {
     display: none;
 }
-
 .workout-box {
     position: relative;
     margin: auto;
     width: 95%;
     border-radius: 10%;
 }
-
 .cardio {
     background: rgba(95, 182, 209, 0.322);
 }
-
 .strength {
     background: rgba(167, 112, 112, 0.438);
 }
-
 li.desc {
     font-size: 0.9em;
     font-weight: bold;
     text-decoration: underline;
 }
-
 li.sets, li.reps, li.weight {
     font-size: 0.6em;
 }
@@ -128,44 +113,78 @@ li.sets, li.reps, li.weight {
 }
 
 #days-of-the-week {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 #workout-type {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 #choose-weekday {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 
 #choose-workout {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 
 #details-strength label {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 #details-strength input {
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 #details-cardio label {
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 
 #details-cardio input {
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 #submit-button {
     margin-top: 2%;
     width: 10vw;
-    font-size: 500px;
+    /* font-size: 500px; */
 }
 
-/* default: mobile */
+
+/* default styling for mobile */
+
+@media (max-width: 479px) {
+    body {
+        background-size: auto 100vh;
+        grid-template-rows: 1fr 3fr 2fr;
+    }
+    header h1 {
+        width: 80vw;
+    }
+    ul.weekdays-ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 'sun mon tues wed' 
+                             'thurs fri sat blank';
+    }
+    .weekdays-ul li.card{
+        padding: 1vw;
+        width: 20vw;
+        height: auto;
+        font-size: 0.5em;
+    }
+    .thursday-li, .friday-li, .saturday-li {
+        position: relative;
+        left: 12vw;
+    }
+    #workout-form {
+        width: 75vw;
+    }
+    .workout-box {
+        margin-bottom: 0.3vh;
+    }
+
+}
 
 @media (min-width: 480px) {
    
@@ -180,7 +199,7 @@ li.sets, li.reps, li.weight {
 }
 
 @media (min-width: 1200px) {
-
+    
 }
 
 
